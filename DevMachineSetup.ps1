@@ -22,8 +22,10 @@ Param
 
 if( $prepOS ) 
 {
+	Write-Host "Prepping OS Starting"
     Set-ExecutionPolicy unrestricted
     Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+	Write-Host "Prepping OS Complete"
 }
 
 if( $work ) 
@@ -39,13 +41,16 @@ function ShowFileExtensions{
 }
 
 if( $winSettings ) {
+	Write-Host "Configuring OS settings"
     ShowFileExtensions
     choco install taskbar-never-combine -y -force
+	Write-Host "Configuring OS settings Complete"
 }
 
 
 
 if( $tools ) {
+	Write-Host "Installing Tools"
     choco install -y googlechrome
     choco install -y 7zip
     choco install -y sysinternals
@@ -59,7 +64,7 @@ if( $tools ) {
     choco install kdiff3 -y
     
     choco install conemu -y
-
+	Write-Host "Installing Tools Complete"
     
    
 }
