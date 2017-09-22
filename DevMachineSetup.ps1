@@ -62,7 +62,8 @@ if( $tools ) {
     choco install poshgit -y
     choco install gitextensions -y
     choco install kdiff3 -y
-    
+    choco install gcloudsdk -y
+    choco install kubernetes-cli -y
     choco install conemu -y
 	Write-Host "Installing Tools Complete"
     
