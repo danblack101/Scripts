@@ -65,6 +65,7 @@ if( $tools ) {
     choco install gcloudsdk -y
     choco install kubernetes-cli -y
     choco install conemu -y
+    choco install virtualbox -y
 	Write-Host "Installing Tools Complete"
     
    
