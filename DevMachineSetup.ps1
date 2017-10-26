@@ -66,6 +66,7 @@ if( $tools ) {
     choco install kubernetes-cli -y
     choco install conemu -y
     choco install virtualbox -y
+    choco install putty -y
 	Write-Host "Installing Tools Complete"
     
    
