@@ -67,6 +67,7 @@ if( $tools ) {
     choco install conemu -y
     choco install virtualbox -y
     choco install putty -y
+    choco install dotnetcore-sdk -y
 	Write-Host "Installing Tools Complete"
     
    
