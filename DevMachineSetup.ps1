@@ -56,6 +56,7 @@ if( $tools ) {
     choco install -y sysinternals
     choco install -y visualstudiocode
     choco install -y linqpad4
+    choco install launchy -y
     
     #git
     choco install git.install -y
