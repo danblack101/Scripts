@@ -1,4 +1,4 @@
-#.\DevMachineSetup.ps1 -prepOS -tools -vs -winSettings
+#.\DevMachineSetup.ps1 -prepOS -tools -vs -winSettings -work
 
 Param
 (
