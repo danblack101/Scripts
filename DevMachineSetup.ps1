@@ -77,7 +77,7 @@ if( $tools ) {
 
 if( $vs ) {
     choco install -y visualstudiocode -y
-    choco install visualstudio2017professional -y
+    choco install visualstudio2019professional -y
     choco install resharper -y
 }
 
