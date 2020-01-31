@@ -1,3 +1,4 @@
+# Set-ExecutionPolicy unrestricted
 #.\DevMachineSetup.ps1 -prepOS -tools -vs -winSettings -work
 
 Param
