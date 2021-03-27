@@ -9,14 +9,6 @@ Param
     [Switch]
     $tools,
      
-    [Switch]
-    $vs,
-    
-    [Switch]
-    $winSettings,
-
-
-
 )
 
 if( $prepOS ) 
