@@ -1,5 +1,5 @@
 # Set-ExecutionPolicy unrestricted
-#.\DevMachineSetup.ps1 -prepOS -tools -vs -winSettings -work
+#.\DevMachineSetup.ps1 -prepOS -tools
 
 Param
 (
@@ -15,8 +15,6 @@ Param
     [Switch]
     $winSettings,
 
-    [Switch]
-    $work
 
 
 )
@@ -26,14 +24,17 @@ if( $prepOS )
 	Write-Host "Prepping OS Starting"
     Set-ExecutionPolicy unrestricted
     Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+
+    Write-Host "Configuring OS settings"
+    ShowFileExtensions
+    choco install taskbar-never-combine -y -force
+	Write-Host "Configuring OS settings Complete"
+
+
 	Write-Host "Prepping OS Complete"
 }
 
-if( $work ) 
-{
-    choco install slack -y
-   
-   }
+
 function ShowFileExtensions{
     Push-Location
     Set-Location HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
@@ -41,12 +42,6 @@ function ShowFileExtensions{
     Pop-Location
 }
 
-if( $winSettings ) {
-	Write-Host "Configuring OS settings"
-    ShowFileExtensions
-    choco install taskbar-never-combine -y -force
-	Write-Host "Configuring OS settings Complete"
-}
 
 
 
@@ -64,20 +59,23 @@ if( $tools ) {
     choco install gitextensions -y
     choco install kdiff3 -y
     choco install winmerge -y
-    choco install gcloudsdk -y
-    choco install kubernetes-cli -y
     choco install conemu -y
-    choco install virtualbox -y
     choco install putty -y
     choco install dotnetcore-sdk -y
+    choco install postman -y
+    choco install nodejs -y
+    choco install azure-data-studio
+    choco install seq -y
+    choco install microsoft-teams -y
+    choco install greenshot -y
+    choco install -y visualstudiocode -y
+    choco install visualstudio2019professional -y
+    choco install resharper -y
+    npm install cypress --save-dev
+    
 	Write-Host "Installing Tools Complete"
     
    
 }
 
-if( $vs ) {
-    choco install -y visualstudiocode -y
-    choco install visualstudio2019professional -y
-    choco install resharper -y
-}
 
