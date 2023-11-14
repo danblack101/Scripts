@@ -17,6 +17,7 @@ choco install azure-cli -y
 choco install spotify -y
 choco install evernote -y
 choco install bitwarden -y
+choco install gitextensions -y
 
 
 # Windows configurations
